@@ -1,13 +1,20 @@
 {
-  "name": "typescript-numberguess-cli",
+  "name": "@_saad/num-guess",
   "version": "1.0.0",
   "description": "Number Guess CLI using Node.js, TypeScript, and Inquirer",
-  "main": "src/index.ts",
-  "scripts": {
-    "start": "ts-node src/index.ts"
+  "homepage": "https://github.com/SaadFarhanIdress/node-inquirer-ng-cli",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SaadFarhanIdress/node-inquirer-ng-cli"
   },
+  "main": "src/index",
+  "scripts": {
+    "start": "ts-node src/index"
+  },
+  "bin": "./src/index.ts",
   "dependencies": {
-    "inquirer": "^8.0.0",
+    "inquirer": "^8.2.4",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
