@@ -45,4 +45,5 @@ async function validator(answer: string, round: number, lastNum: number) {
       promptQuestion(round, lastNum);
     }
   }
+
 }
