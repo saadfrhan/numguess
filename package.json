@@ -1,6 +1,6 @@
 {
   "name": "@_saad/num-guess",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Number Guess CLI using Node.js, TypeScript, and Inquirer",
   "homepage": "https://github.com/SaadFarhanIdress/node-inquirer-ng-cli",
   "type": "module",
@@ -10,14 +10,19 @@
   },
   "main": "src/index",
   "scripts": {
-    "start": "ts-node src/index"
+    "start": "ts-node src/index",
+    "build": "tsc"
   },
   "bin": "./src/index.ts",
   "dependencies": {
-    "inquirer": "^8.2.4",
+    "chalk": "^5.1.2",
+    "chalk-animation": "^2.0.3",
+    "inquirer": "^8.0.0",
+    "nanospinner": "^1.1.0",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
     "@types/inquirer": "^9.0.2",
     "@types/node": "^18.11.0",
     "typescript": "^4.8.4"
