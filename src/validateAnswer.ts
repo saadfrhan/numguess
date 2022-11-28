@@ -26,7 +26,7 @@ export default function validateAnswer({
 async function validator(answer: string, round: number, lastNum: number) {
 
   const spinner = createSpinner('Checking answer...').start();
-  await sleep(500);
+  await sleep(200);
 
   if (parseInt(answer) === randomInt) {
     lives = 3 * (round + 1);
