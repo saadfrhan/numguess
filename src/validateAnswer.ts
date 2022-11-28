@@ -1,7 +1,6 @@
 import promptQuestion from "./index.js";
 import ValAnswerI from "./ts/index.js";
-import { generateRandomNumber, sleep, wantContinue } from "./utils/index.js";
-import { createSpinner } from 'nanospinner';
+import { generateRandomNumber, wantContinue } from "./utils/index.js";
 
 let score = 0;
 let lives = 3;
@@ -15,9 +14,10 @@ export default function validateAnswer({
 }: ValAnswerI) {
   if (isNewGame) {
     lives = 3;
+    randomInt = generateRandomNumber(1, 5);
   }
   if (answer === 'quit') {
-    console.log(`Your final score is ${score}.\n`);
+    console.log(`Your final score is ${score}.`);
     return;
   }
   return validator(answer, round, lastNum);
@@ -25,24 +25,23 @@ export default function validateAnswer({
 
 async function validator(answer: string, round: number, lastNum: number) {
 
-  const spinner = createSpinner('Checking answer...').start();
-  await sleep(500);
-
   if (parseInt(answer) === randomInt) {
     lives = 3 * (round + 1);
     score = score + round;
-    spinner.success({ text: `Answer is correct! 🎉, score raised to ${score} and lives raised to ${lives}.\n` });
+    console.log(`Answer is correct! 🎉, score raised to ${score} and lives raised to ${lives}.`);
     promptQuestion(round + 1, lastNum + 5);
     randomInt = generateRandomNumber(1, lastNum + 5);
   } else {
     lives--;
     if (lives === 0) {
-      spinner.error({ text: `You lost all lives!, the correct answer is ${randomInt}.\n` });
+      console.log(`You lost all lives!, the correct answer is ${randomInt}.`);
+      console.log('\n');
       wantContinue();
     }
     else {
-      spinner.error({ text: `You lost a live, now you have ${lives} ${lives === 1 ? 'live' : 'lives'} left.\n` });
+      console.log(`You lost a live, now you have ${lives} ${lives === 1 ? 'live' : 'lives'} left.`);
       promptQuestion(round, lastNum);
     }
   }
+
 }

@@ -32,6 +32,7 @@ export const wantContinue = async (): Promise<void | undefined> => {
     default: true
   });
   if (wantContinue) {
+    console.log('\n');
     return promptQuestion(1, 5, true);
   }
   console.log(chalk.green('Maybe next time!'));
