@@ -28,8 +28,7 @@ async function validator(answer: string, round: number, lastNum: number) {
   if (parseInt(answer) === randomInt) {
     lives = 3 * (round + 1);
     score = score + round;
-    console.log(`Answer is correct! 🎉, score raised to ${score} and lives raised to ${lives}.`);
-    console.log('\n');
+    console.log(`Answer is correct! 🎉, score raised to ${score} and lives raised to ${lives}.\n`);
     promptQuestion(round + 1, lastNum + 5);
     randomInt = generateRandomNumber(1, lastNum + 5);
   } else {
