@@ -1,6 +1,6 @@
 {
   "name": "numguess",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Number Guess CLI using Node.js, TypeScript, and Inquirer",
   "homepage": "https://github.com/SaadFarhanIdress/node-inquirer-ng-cli",
   "type": "module",
@@ -18,7 +18,6 @@
     "chalk": "^5.1.2",
     "chalk-animation": "^2.0.3",
     "inquirer": "^8.0.0",
-    "nanospinner": "^1.1.0",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
